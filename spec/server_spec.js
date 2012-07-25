@@ -1,6 +1,7 @@
 /*global describe, it, before, after, beforeEach, afterEach*/
 
 
+
 'use strict';
 
 
@@ -26,14 +27,13 @@ describe('Madride.Server', function () {
 
   env.appendPath('.');
 
-  var app = connect(srv.handle);
-
+  var app = connect(srv.app);
 
   it("should serve html", function (done) {
     app.request()
       .get('/hello.html')
       .end(function (res) {
-        res.statusCode.should.be(200);
+        res.statusCode.should.equal(200);
         done();
       });
   });
@@ -43,7 +43,7 @@ describe('Madride.Server', function () {
     app.request()
       .get('/foo.js')
       .end(function (res) {
-        res.statusCode.should.be(200);
+        res.statusCode.should.equal(200);
         done();
       });
   });
@@ -53,7 +53,7 @@ describe('Madride.Server', function () {
     app.request()
       .get('/moo.html')
       .end(function (res) {
-        res.statusCode.should.be(404);
+        res.statusCode.should.equal(404);
         done();
       });
   });
