@@ -13,7 +13,7 @@
 
   "main"            : "./index.js",
 
-  "bin"             : { "madride-js": "bin/mincer.js" },
+  "bin"             : { "madride-js": "bin/madride.js" },
   "scripts"         : { "test": "make test" },
   "dependencies"    : {
                         "argparse" : "~> 0.1.3",
